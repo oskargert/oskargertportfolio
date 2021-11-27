@@ -17,7 +17,21 @@ collections:
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Tags", name: "tags", widget: "select", options: ["Micro Controllers", "Crocheting", "Web Developement", "Work", "Speakers", "3D printing", "Featured", "post"], defualt: ["post"] , multiple: true, min: 1}
+      - label: "Tags"
+        name: "tags"
+        widget: "select"
+        options: 
+          - { label: "Micro Controllers", value: "micro-controllers"}
+          - { label: "Crocheting", value: "crocheting"}
+          - { label: "Web Developement", value: "web-developement"}
+          - { label: "Work", value: "work"}
+          - { label: "Speakers", value: "speakers"}
+          - { label: "3D printing", value: "3d-printing"}
+          - { label: "Featured", value: featured}
+          - { label: "Post", value: "post"}
+        defualt: ["post"] 
+        multiple: true
+        min: 1
       - { label: "Featured Image", name: "image", widget: "image" }
       - { label: "Image Caption", name: "imageAlt", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
