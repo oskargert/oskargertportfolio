@@ -79,6 +79,13 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+
+  display: grid;
+  grid-template-areas: 
+    "header"
+    "main "
+    "footer";
+  grid-template-rows: 1fr minmax(70vh, auto) 1fr;
 }
 
 /* A elements that don't have a class get default styles */
@@ -205,6 +212,7 @@ section,
 
 .page-header {
   padding: 2em 0 1em 0;
+  grid-area: header;
 }
 
 .page-header__content {
@@ -238,6 +246,7 @@ section,
   color: var(--clr-neutral-100);
   background-color: var(--clr-primary-500);
   text-align: center;
+  grid-area: footer;
 }
 
 /* //////////////////////
@@ -262,6 +271,14 @@ section,
   .hero > div {
     grid-auto-flow: column;
   }
+
+  .body{
+    grid-template-areas: 
+      "header header header"
+      "left main right"
+      "footer footer footer";
+  }
+  
 }
 
 .featured-articles {
