@@ -1,8 +1,8 @@
 ---
-title: Crochet Spider
+title: Spider
 description: Small crochet spider made for Victoria Deneke's 31st birthday
 author: Oskar Gert
-date: 2021-11-27T15:07:29.062Z
+date: 2021-07-08T16:09:02.863Z
 tags:
   - post
   - crocheting
