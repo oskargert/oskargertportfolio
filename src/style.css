@@ -22,6 +22,8 @@
   --clr-neutral-400: hsla(0, 0%, 40%, 1);
   --clr-neutral-500: hsla(0, 0%, 60%, 1);
   --clr-neutral-900: hsla(0, 0%, 10%, 1);
+
+  --article-width: 18.5vw;
 }
 
 @media (min-width: 35em) {
@@ -137,9 +139,13 @@ strong {
   font-weight: var(--fw-700);
 }
 
+/* nav{
+  width: 100%;
+} */
+
 section,
 .section {
-  padding: min(10vh, 10em) 0;
+  padding: min(1vh, 1em) 0;
 }
 
 
@@ -170,6 +176,7 @@ section,
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap, 1em);
+  justify-content: space-between
 }
 
 .text-center {
@@ -197,7 +204,7 @@ section,
   /////////////////////// */
 
 .page-header {
-  padding: 2em 0;
+  padding: 2em 0 1em 0;
 }
 
 .page-header__content {
@@ -262,9 +269,19 @@ section,
 }
 
 .articles__list {
-  --flow-spacer: 3rem;
-  margin: 6rem 0;
+  /* --flow-spacer: 3rem;
+  margin: 6rem 0; */
+  
+  /* My css */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+
+  transition: all 5s;
+  /* transition: grid-column 2s ease-out 100ms;
+  transition: grid-row 2s ease-out 100ms; */
 }
+
 
 /* //////////////////////
   Individual article page
@@ -285,26 +302,66 @@ section,
   /////////////////////// */
 
 .snippet {
-  display: grid;
+  /* display: grid;
   gap: 1em;
   grid-template-areas:
     "image"
     "title"
     "meta"
     "body"
-    "button";
+    "button"; */
+    
+  /* My Css  */
+  flex: 0 0 var(--article-width);
+  
+  /* grid-column: span 1;
+  grid-row: span 1;
+  transition: grid-column 1s ease-in-out;
+  transition: grid-row 1s ease-in-out; */
+  width: 100%;
+  transition: all 1s ease-in-out;
+}
+
+.snippet:hover{
+  /* grid-column: span 2;
+  grid-row: span 2; */
+  /* width: 200%; */
+}
+
+.featured{
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.snippet__article{
+  position: relative;
+
+
 }
 
 .snippet__image {
-  grid-area: image;
+  /* grid-area: image; */
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+
+  /* My css */
+  position: relative;
 }
 .snippet__title {
-  grid-area: title;
+  /* grid-area: title; */
+
+  /* My css */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.5); 
+  width: 80%;
+  text-align: center;
+
 }
-.snippet__meta {
+/* .snippet__meta {
   grid-area: meta;
   color: var(--clr-neutral-300);
 }
@@ -321,7 +378,7 @@ section,
   color: var(--clr-neutral-900);
   font-size: var(--fs-500);
 }
-
+*/
 .snippet__title a {
   color: inherit;
   text-decoration: none;
@@ -334,14 +391,20 @@ section,
 
 @media (min-width: 45em) {
   .snippet {
-    grid-template-areas:
+    /* grid-template-areas:
       "title image"
       "meta image"
       "body image"
       "button image";
     grid-column-gap: 4em;
     grid-template-columns: 1fr 40%;
-    grid-template-rows: min-content min-content min-content 1fr;
+    grid-template-rows: min-content min-content min-content 1fr; */
+
+    display: inline-block;
+    /* width: 300px; */
+    
+    
+
   }
 }
 
